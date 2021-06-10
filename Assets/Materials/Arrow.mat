@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Arrow
   m_Shader: {fileID: 4800000, guid: 8d9d5ce6d38b3495fb7196d488207205, type: 3}
-  m_ShaderKeywords: TCP2_OUTLINE_CONST_SIZE _FRESNEL
+  m_ShaderKeywords: TCP2_OUTLINE_CONST_SIZE
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -68,7 +68,7 @@ Material:
     - _EnableTexturedOutline: 0
     - _EnableZSmooth: 0
     - _Fog: 0
-    - _Fresnel: 1
+    - _Fresnel: 0
     - _FresnelOpacity: 0.363
     - _FresnelSmoothness: 0.453
     - _FresnelThickness: 0.75

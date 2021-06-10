@@ -24,7 +24,7 @@ public class Level : MonoBehaviour {
         number = PlayerPrefs.GetInt(Loader.k_Level, 1);
         Application.targetFrameRate = 60;
         if(debugging) Channel.Setup();
-        UI.appereance.level = number;
+        //UI.appereance.level = number;
         Channel.Reset();
         //TinySauce.OnGameStarted(number.ToString());
     }

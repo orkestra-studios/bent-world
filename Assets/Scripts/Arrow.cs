@@ -29,8 +29,14 @@ public class Arrow : MonoBehaviour {
     }
 
     private void OnCollisionEnter(Collision other) {
-        //body.isKinematic = true;
         enabled = false;
+    }
+
+    private void OnTriggerEnter(Collider other) {
+        //body.isKinematic = true;
+        if(other.gameObject.layer == 7) {
+            other.gameObject.GetComponent<Balloon>().Pop();
+        }
     }
 
 }

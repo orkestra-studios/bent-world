@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dd5e07557241409e81c2f1f1790bfa9, type: 3}
   m_Name: Camera
   m_EditorClassIdentifier: 
-  movementSpeed: {x: 8, y: 8, z: 8}
+  movementSpeed: {x: 8, y: 12, z: 12}
   positionOffset: {x: 6, y: 2, z: -4}
   movementIsRelative: 0
-  rotationSpeed: {x: 0, y: 0, z: 0}
-  rotationOffset: {x: 0, y: 2, z: 2}
+  rotationSpeed: {x: 2, y: 2, z: 0}
+  rotationOffset: {x: 0, y: 1, z: 2}
   rotationIsRelative: 0
-  dynamicSpeed: 0.5
+  dynamicSpeed: 0.25
   transformLocally: 0
