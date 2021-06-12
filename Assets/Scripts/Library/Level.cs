@@ -20,6 +20,7 @@ public class Level : MonoBehaviour {
     public bool debugging = false;
 
     void Awake() {
+        Application.targetFrameRate = 60;
         current = this;
         number = PlayerPrefs.GetInt(Loader.k_Level, 1);
         Application.targetFrameRate = 60;

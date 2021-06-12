@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Bow
   m_Shader: {fileID: 4800000, guid: 8d9d5ce6d38b3495fb7196d488207205, type: 3}
-  m_ShaderKeywords: TCP2_OUTLINE_CONST_SIZE
+  m_ShaderKeywords: _FRESNEL
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -68,10 +68,10 @@ Material:
     - _EnableTexturedOutline: 0
     - _EnableZSmooth: 0
     - _Fog: 0
-    - _Fresnel: 0
-    - _FresnelOpacity: 0
+    - _Fresnel: 1
+    - _FresnelOpacity: 0.144
     - _FresnelSmoothness: 0.5
-    - _FresnelThickness: 0.75
+    - _FresnelThickness: 0.809
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
@@ -105,13 +105,13 @@ Material:
     - __dummy__: 0
     - __outline_gui_dummy__: 0
     m_Colors:
-    - _BaseColor: {r: 0.8773585, g: 0.59331596, b: 0.19450872, a: 1}
+    - _BaseColor: {r: 0.8018868, g: 0.594111, b: 0.08699717, a: 1}
     - _Color: {r: 1, g: 0.7137255, b: 0, a: 1}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _EmissionColor: {r: 0.3773585, g: 0.09077963, b: 0.09077963, a: 1}
     - _HColor: {r: 1, g: 1, b: 1, a: 1}
     - _OutlineColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
     - _OutlineOffset: {r: 0, g: 0, b: 0, a: 0}
     - _SColor: {r: 1, g: 0.18431373, b: 0, a: 1}
-    - _ShadowTint: {r: 0.5566038, g: 0.38218746, b: 0.31768423, a: 0.5019608}
+    - _ShadowTint: {r: 0.5, g: 0.28717116, b: 0.1485849, a: 0.5019608}
     - _SpecColor: {r: 0.2830189, g: 0.2830189, b: 0.2830189, a: 1}
   m_BuildTextureStacks: []

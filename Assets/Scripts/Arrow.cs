@@ -5,8 +5,8 @@ using UnityEngine;
 public class Arrow : MonoBehaviour {
 
     public Transform tail;
+    public Rigidbody body;
     [SerializeField] TrailRenderer trail;
-    [SerializeField] Rigidbody body;
 
     void Awake() {
         body.isKinematic = true;

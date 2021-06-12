@@ -4,44 +4,50 @@ using UnityEngine;
 
 using Utility.Vectors;
 
-public class Trajectory : MonoBehaviour {
+public class Trajectory : MonoBehaviour
+{
 
-    [Range(1,1000)] public int resolution = 24;
+    public enum Render {Always, OnInput}
+    public Render render = Render.Always;
+    [Range(1, 100)] public int resolution = 24;
     public Bow bow;
-    public LineRenderer renderer;
-    public float duration = 10f;
+    public LineRenderer _renderer;
+    [Range(1, 5)] public float duration = 1f;
 
     public List<Vector3> points;
 
-    void Start() {
-        
-    }
-
-    void Generate(Vector3 aim, float power) {
-
-        Vector3 velocity = (power * aim) * Time.fixedDeltaTime; // TODO: arrow mass
-        float g = Physics.gravity.y;
-        float timeStep = duration / resolution;
+    void Generate(Vector3 aim, float power, float mass = 1) {
+        //             v = ƒ             * t                   / m
+        Vector3 velocity = (power * aim) * Time.fixedDeltaTime / mass;
+        Vector3 g = Physics.gravity.Y();
+        float timeStep = 1f/resolution;
+        float sampleCount = duration * resolution;
 
         points.Clear();
-        for (int i = 0; i < duration; i++) {
+        for (int i = 0; i < sampleCount; i++) {
             float t = timeStep * i;
-            Vector3 movement = velocity * t + (g * t * t / 2).Y();
-            points.Add(transform.position+movement);
+            Vector3 movement = velocity * t + (g * t * t / 2);
+            points.Add(transform.position + movement);
         }
+        if (points.Count < 1) return;
 
-        if(points.Count < 1) return;
-
-        renderer.positionCount = points.Count;
-        renderer.SetPositions(points.ToArray());
+        _renderer.positionCount = points.Count;
+        _renderer.SetPositions(points.ToArray());
     }
 
     void FixedUpdate() {
-        if(bow.state == Bow.State.Aiming) {
-            Generate(bow.direction, bow.power);
-            renderer.enabled = true;
-        } else {
-            renderer.enabled = false;
+        switch (render) {
+            case Render.Always:
+                Generate(bow.direction, bow.power, bow.arrowMass);
+                break;
+            case Render.OnInput:
+                if(MobileInput.Touching) {
+                    Generate(bow.direction, bow.power, bow.arrowMass);
+                    _renderer.enabled = true;
+                } else {
+                    _renderer.enabled = false;
+                }
+                break;
         }
     }
 }
